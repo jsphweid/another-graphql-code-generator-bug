@@ -1,0 +1,15 @@
+schema: ./src/index.ts
+require:
+  - ts-node/register
+overwrite: true
+generates:
+  GeneratedTypes.ts:
+    plugins:
+      - add: "// THIS IS A GENERATED FILE, DO NOT MODIFY"
+      - add: "// tslint:disable"
+      - typescript
+      - typescript-resolvers
+    config:
+      useIndexSignature: true
+      showUnusedMappers: true
+      skipTypename: true
