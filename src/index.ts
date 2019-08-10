@@ -1,11 +1,13 @@
-import { mergeSchemas } from "graphql-tools";
+import gql from "graphql-tag";
 
-import * as Node from "./Node";
-import * as Query from "./Query";
-import * as Thing from "./Thing";
-import * as Other from "./Other";
+import * as Test from "./test";
 
-export const schema = mergeSchemas({
-  schemas: [Node.typeDefs, Query.typeDefs, Thing.typeDefs, Other.typeDefs],
-  resolvers: {}
-});
+// The types from test.ts are not being imported...
+// But if I remove the line "scalar someScalar", it works
+// Note that if those types in test.ts are in this file it works...
+
+export const schema = gql`
+  scalar someScalar
+
+  ${Test.typeDefs}
+`;

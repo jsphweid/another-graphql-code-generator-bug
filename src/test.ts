@@ -2,6 +2,10 @@ import gql from "graphql-tag";
 
 export const typeDefs = gql`
   type Query {
-    memes: Thing!
+    memes: String!
+  }
+
+  type Other {
+    meme: Int!
   }
 `;

@@ -2,7 +2,8 @@
   "private": true,
   "name": "something",
   "scripts": {
-    "generate:code": "TS_NODE_TRANSPILE_ONLY=true gql-gen"
+    "generate:code": "TS_NODE_TRANSPILE_ONLY=true gql-gen",
+    "start": "ts-node ./src/index.ts"
   },
   "dependencies": {
     "graphql": "^0.13.2",
